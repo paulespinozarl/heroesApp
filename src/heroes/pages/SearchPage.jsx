@@ -1,7 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import queryString from 'query-string';
+
 import { useForm } from "../../hooks/useForm";
 import { HeroCard } from "../components";
-import queryString from 'query-string';
 import { getHeroesByName } from "../helpers";
 
 export const SearchPage = () => {
@@ -35,7 +36,7 @@ export const SearchPage = () => {
     <div className="col-5">
       <h4>Searching</h4>
       <hr />
-      <form onSubmit={ onSearchSubmit }>
+      <form aria-label="form" onSubmit={ onSearchSubmit }>
         <input 
         type="text"
         placeholder="Search a hero"
